@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- <div id="app">First div</div> -->
+    <div id="app" class="container">
+        <p>
+            <!-- use the router-link component for navigation. -->
+            <!-- specify the link by passing the `to` prop. -->
+            <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
+            <router-link to="/">Home</router-link>
+            <router-link to="/about">About</router-link>
+        </p>
+        <!-- route outlet -->
+        <!-- component matched by the route will render here -->
+        <router-view></router-view>
+    </div>
+</body>
+
+<script type="module">
+
+
+    import router from "./router.js";
+
+    //import GlobalApp from "./global-app.js";
+
+    // let app = Vue.createApp({
+    //     data() {
+    //         return {
+    //         }
+    //     },
+    //     components: {
+    //         GlobalApp: GlobalApp
+    //     },
+    //     template: "<GlobalApp />"
+    // });
+
+    const app = Vue.createApp({});
+    app.use(router);
+
+    let vm = app.mount("div#app");
+    
+</script>
+</html>
